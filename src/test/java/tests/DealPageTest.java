@@ -7,7 +7,7 @@ import pages.HomePage;
 import utils.Constants;
 import utils.ErrorMessages;
 
-public class DealPageTests extends BaseTest {
+public class DealPageTest extends BaseTest {
 
     @Test(testName = "verify deal page elements")
     public void dealPageDisplayTest() {

@@ -1,8 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Constants;
 
 public class HeaderPage extends BasePage {
     @FindBy(css = ".icon-x")
@@ -47,7 +50,23 @@ public class HeaderPage extends BasePage {
     public boolean isNotificationBellDisplayed() {
         return notification.isDisplayed();
     }
-    public boolean isSignInButtonDisplayed(){
+
+    public boolean isSignInButtonDisplayed() {
         return signIn.isDisplayed();
     }
+
+    public void clickSearchBar() {
+        waitForElement(searchBar);
+        searchBar.click();
+    }
+
+    public void inputSearchBarText() {
+        searchBar.sendKeys(Constants.PRODUCT);
+    }
+
+    public void pressEnterSearchBar() {
+        waitForElement(searchBar);
+        driver.findElement(By.xpath("(//input[@type='search'])[3]")).sendKeys(Keys.ENTER);
+    }
 }
+

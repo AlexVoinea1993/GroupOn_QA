@@ -31,6 +31,7 @@ public class HomePage extends BasePage {
     }
 
     public void closeNotificationIcon() {
+        waitForElement(close);
         close.click();
     }
 
